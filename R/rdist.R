@@ -1,25 +1,25 @@
-#'simulation d'une loi discrete
-#'@export
-#'@param x numeric vector representing the values ofthe random variable
-#'@param p numeric vector representing the probabilities
+# ' simulation d'une loi discrete
+# ' @export
+# ' @param x vecteur numerique representant les valeurs de la variable aleatoire
+# ' @param p vecteur numerique representant les probabilit?s
+# ' @param n nombre d'iterations
 rdist<-function(x,p)
 {
   n=length(p)
   r=runif(1)
   b=p[1];
-
-     if((r>=0)&(r<=b))
-     {
-       y=x[1]
-       return(y)
-     }
+  if((r>=0) & (r<=b))
+  {
+    y=x[1]
+    return(y)
+  }
   else
   {
     a=p[1]
     b=b+p[2]
     for(i in 2:n-1)
     {
-      if((r>=a)&(r<=b))
+      if((r>=a) & (r <=b))
       {
         y=x[i]
         return(y)
@@ -35,3 +35,4 @@ rdist<-function(x,p)
     return(y)
   }
 }
+
